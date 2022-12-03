@@ -1,0 +1,22 @@
+<div class="card w-14">
+    <img src="{{pokemon.sprites.front_default}}" alt="" class="card-img-top">
+    <div class="card-body">
+        <h5>#{{pokemon.id}} {{pokemon.name}}</h5>
+        <a class="btn btn-primary" routerLink="/pokemon/{{pokemon.id}}">See more</a>
+        <button class="btn btn-danger" (click)="alertUserDelete(demoModal)">Delete</button>
+    </div>
+</div>
+
+<ng-template #demoModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delete Pokemon</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure about removing <span class="fw-bold">{{pokemon.name}}</span> from the list?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Yes</button>
+    <button type="button" class="btn btn-danger" (click)="modal.dismiss()">No</button>
+  </div>
+</ng-template>

@@ -1,0 +1,10 @@
+<div class="container my-4">
+<a class="btn btn-primary" routerLink="/addPokemon">Add</a>
+</div>
+<div class="container d-flex my-4">
+    <div class="row">
+        <div class="col" *ngFor="let pokemon of data">
+            <app-card [data]="pokemon"></app-card>
+        </div>
+    </div>
+</div>

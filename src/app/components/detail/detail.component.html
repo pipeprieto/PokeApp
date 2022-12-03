@@ -1,0 +1,31 @@
+<div class="my-4 container">
+<a routerLink="/" class="btn btn-primary">
+    <i class="bi bi-arrow-left"></i>
+</a>
+</div>
+<div class="container my-4 border border-secondary w">
+    <div class="">
+        <span class="fw-bold"><i class="bi bi-browser-chrome"></i> {{pokemon.name}}</span>
+    </div>
+    <div class="d-flex justify-content-end">
+        <span class="fw-bold">Lvl {{pokemon.base_experience}} HP {{pokemon.stats[0].base_stat}} <i class="bi bi-heart-pulse-fill"></i></span>
+    </div>
+    <div class="d-flex justify-content-center border border-secondary">
+        <img src="{{pokemon.sprites.front_default}}" class="s-100"/>
+    </div>
+    <div class="d-flex justify-content-center">
+        <p class="fw-bold">Types</p>
+    </div>
+    <div class="d-flex justify-content-center" *ngFor="let type of pokemon.types"> 
+        <p><i class="bi bi-diamond-fill"></i> {{type.type.name}}</p>
+    </div>
+    <div>
+        <p class="fw-bold">Abilities</p>
+    </div>
+    <div *ngFor="let ability of pokemon.abilities">
+        <p><span><i class="bi bi-chevron-double-up"></i></span> {{ability.ability.name}}</p>
+    </div>
+    <div class="d-flex justify-content-end">
+       <p><span class="fw-bold">No. </span> {{pokemon.id}}</p> 
+    </div>
+</div>
