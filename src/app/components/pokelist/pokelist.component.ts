@@ -8,6 +8,7 @@ import { AppService, ResponsePokes,Pokemon } from 'src/app/services/app.service'
 })
 export class PokelistComponent implements OnInit {
   data!: Array<any>;
+  alert!:false;
   constructor(private service: AppService) {}
 
   ngOnInit(): void {
@@ -19,5 +20,15 @@ export class PokelistComponent implements OnInit {
     this.service.getPokemons().subscribe((res:any)=>{
       this.data= res.results;
     })
+  }
+
+  filterPokemons(text:string){
+    console.log(text)
+    // let res =this.service.filterPokemons(text)
+    // if (res === true) {
+    //   this.alert = res
+    // }else{
+    //   this.data = res;
+    // }
   }
 }

@@ -24,6 +24,20 @@ export class AppService {
     return this.http.get(`${this.url}pokemon/${id}`);
   }
 
+  filterPokemons(text:string){
+      let localstorage = window.localStorage.getItem('pokemons')
+      if (localstorage !== null) {
+        let arr = JSON.parse(localstorage);
+        if (/^[a-z]$/.exec(text)) {
+          return arr.filter((poke:any)=>poke.name === text)
+        }
+        if (/^[1-9]$/.exec(text)) {
+          return arr.filter((poke:any)=> poke.id === text)
+        }
+      }
+      return true;
+  }
+
   createPokemon() {}
 
   deletePokemon() {}

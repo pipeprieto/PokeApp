@@ -1,5 +1,10 @@
-<div class="container my-4">
-<a class="btn btn-primary" routerLink="/addPokemon">Add</a>
+<div class="container my-4 d-flex justify-content-center">
+    <input #text class="form-control w-200" type="text" placeholder="Type pokemon name" (change)="filterPokemons(text.value)">
+</div>
+<div class="position relative">
+    <div class="float-md-end position-fixed bottom-0 end-0 my-4 mx-4">
+       <a class="btn btn-primary" routerLink="/addPokemon"><i class="bi bi-plus-lg"></i></a>
+    </div>
 </div>
 <div class="container d-flex my-4">
     <div class="row">
