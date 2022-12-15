@@ -7,6 +7,7 @@ import { AppService, ResponsePokes,Pokemon } from 'src/app/services/app.service'
   styleUrls: ['./pokelist.component.css'],
 })
 export class PokelistComponent implements OnInit {
+  filter=''
   data!: Array<any>;
   alert!:false;
   constructor(private service: AppService) {}
@@ -22,13 +23,5 @@ export class PokelistComponent implements OnInit {
     })
   }
 
-  filterPokemons(text:string){
-    console.log(text)
-    // let res =this.service.filterPokemons(text)
-    // if (res === true) {
-    //   this.alert = res
-    // }else{
-    //   this.data = res;
-    // }
-  }
+ 
 }

@@ -10,6 +10,8 @@ import { PokelistComponent } from './components/pokelist/pokelist.component';
 import {HttpClientModule} from '@angular/common/http';
 import { DetailComponent } from './components/detail/detail.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PokepipePipe } from './pipes/pokepipe.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,15 @@ import { FooterComponent } from './components/footer/footer.component';
     PokelistComponent,
     DetailComponent,
     FooterComponent,
+    PokepipePipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
